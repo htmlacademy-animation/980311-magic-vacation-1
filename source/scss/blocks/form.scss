@@ -29,6 +29,21 @@
   }
 }
 
+.screen--game {
+  .form__field {
+    width: 0;
+    position: absolute;
+  }
+}
+
+.screen--game.active {
+  .form__field {
+    width: calc(100% - 21rem);
+    transition: width 1s;
+    right: 15%;
+  }
+}
+
 .form__field {
   flex: none;
   margin-right: 3rem;
@@ -79,7 +94,9 @@
 }
 
 .form__button {
-  flex-grow: 1;
+  position: absolute;
+  right: 0;
+  width: 200px;
 
   @media (orientation: portrait) {
     position: relative;

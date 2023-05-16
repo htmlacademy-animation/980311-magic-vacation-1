@@ -65,6 +65,42 @@
   }
 }
 
+.screen--story {
+  .slider__item-title, .slider__item-text {
+    opacity: 0;
+  }
+}
+
+.screen--story.active {
+  .slider__item-title {
+    opacity: 1;
+    transform: translateY(-10px);
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) ;
+  }
+
+  .slider__item-text {
+    opacity: 1;
+    transform: translateX(-20px);
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-delay: 500ms;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) ;
+  }
+}
+
+.swiper-slide-next {
+  .slider__item-text {
+    opacity: 1;
+    transform: translateX(-20px);
+    transition-property: opacity, transform;
+    transition-duration: 2s;
+    transition-delay: 1s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) ;
+  }
+}
+
 .slider__item-title {
   margin: 0 0 0 -5.5rem;
   text-transform: uppercase;

@@ -1455,7 +1455,7 @@ img {
 .screen--game.active .form__field {
   width: calc(100% - 21rem);
   transition: width 1s;
-  right: 15%;
+  right: 20%;
 }
 
 .form__field {

@@ -17,8 +17,25 @@ export default class FullPageScroll {
   init() {
     document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
-
     this.onUrlHashChanged();
+
+    // for smooth animated appearance of some elements on the page load
+    const headerLogo = document.querySelector(".page-header__logo");
+    const footer = document.querySelector(".screen__footer");
+    const navBar = document.querySelector(".page-header__nav");
+    const socialBlockToggler = document.querySelector(".social-block__toggler");
+    const headerMenu = document.querySelector (".page-header__menu .active");
+
+
+    window.onload = function() {
+      socialBlockToggler.classList.add("loaded-social-block-toggler");
+      headerMenu.classList.add("loaded-header-menu");
+
+      headerLogo.style.opacity = 1;
+      headerLogo.style.transform = "translate(0)";
+      footer.style.transform = "translate(0, 0)";
+      navBar.style.opacity = 1;
+    }
   }
 
   onScroll(evt) {

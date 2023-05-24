@@ -11,22 +11,29 @@
     .social-block__list {
       pointer-events: auto;
       transition-property: opacity;
-      transition-duration: 1200ms;
-      transition-timing-function: cubic-bezier(.5,-0.3,.6,.9);
 
       .social-block__link--fb {
+        transition-property: opacity;
+        transition-duration: 200ms;
         opacity: 1;
         transition-delay: 300ms;
+        transition-timing-function: cubic-bezier(.5,-0.3,.6,.9);
       }
 
       .social-block__link--insta {
+        transition-property: opacity;
+        transition-duration: 200ms;
         opacity: 1;
-        transition-delay: 600ms;
+        transition-delay: 500ms;
+        transition-timing-function: cubic-bezier(.5,-0.3,.6,.9);
       }
 
       .social-block__link--vk {
+        transition-property: opacity;
+        transition-duration: 200ms;
         opacity: 1;
-        transition-delay: 900ms;
+        transition-delay: 700ms;
+        transition-timing-function: cubic-bezier(.5,-0.3,.6,.9);
       }
     }
   }

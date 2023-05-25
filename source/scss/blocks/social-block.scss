@@ -39,9 +39,11 @@
   }
 }
 
-.loaded-social-block-toggler.social-block__toggler:before {
-  width: 100%;
-  height: 100%;
+.page-loaded {
+  .social-block__toggler:before {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .social-block__toggler {

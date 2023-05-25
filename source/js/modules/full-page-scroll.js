@@ -17,8 +17,13 @@ export default class FullPageScroll {
   init() {
     document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
-
     this.onUrlHashChanged();
+
+    // for smooth animated appearance of some elements on the page load
+    const bodyElement = document.querySelector("body");
+    window.onload = function() {
+      bodyElement.classList.add("page-loaded")
+    }
   }
 
   onScroll(evt) {

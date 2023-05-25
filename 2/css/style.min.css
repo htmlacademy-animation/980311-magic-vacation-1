@@ -2238,8 +2238,7 @@ img {
 }
 .page-header__menu a.active::after {
   display: block;
-  width: 0;
-  transition: width 300ms 300ms;
+  width: 100%;
 }
 .page-header__menu a:hover, .page-header__menu a:focus {
   color: #a67ee5;

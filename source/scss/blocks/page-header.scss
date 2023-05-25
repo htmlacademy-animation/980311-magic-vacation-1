@@ -281,8 +281,7 @@
     &.active {
       &::after {
         display: block;
-        width: 0;
-        transition: width 300ms 300ms;
+        width: 100%;
       }
     }
 

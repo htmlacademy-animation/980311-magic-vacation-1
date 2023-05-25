@@ -29,6 +29,21 @@
   }
 }
 
+.screen--game {
+  .form__field {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease;
+  }
+}
+
+.screen--game.active {
+  .form__field {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+
 .form__field {
   flex: none;
   margin-right: 3rem;

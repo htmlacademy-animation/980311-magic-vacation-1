@@ -21,8 +21,13 @@ export default class FullPageScroll {
 
     // for smooth animated appearance of some elements on the page load
     const bodyElement = document.querySelector("body");
+    const pageContent = document.querySelector(".page-content");
+    const backgroundScreen = document.createElement("div");
+
     window.onload = function() {
-      bodyElement.classList.add("page-loaded")
+      bodyElement.classList.add("page-loaded");
+      backgroundScreen.classList.add("background-screen")
+      pageContent.appendChild(backgroundScreen);
     }
   }
 

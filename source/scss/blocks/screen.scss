@@ -311,8 +311,21 @@
   }
 }
 
-.screen--prizes {
+.background-screen {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  transform: translateY(0);
   background-color: $c-dark;
+  transition: transform 250ms ease-out;
+}
+
+.screen.active ~ .background-screen {
+  transform: translateY(-100%);
+  z-index: 101;
 }
 
 .screen--game {

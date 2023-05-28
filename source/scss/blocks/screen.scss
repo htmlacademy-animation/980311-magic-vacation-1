@@ -312,20 +312,20 @@
 }
 
 .background-screen {
-  background: linear-gradient(rgba(255,0,0,0) 50%, $c-dark 50%);
-  position: absolute;
+  position: fixed;
+  top: 100%;
+  left: 0;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  transition-property: background;
-  transition-duration: 300ms;
-  transition-timing-function: ease-in;
-  background-size: 100% 200%;
+  z-index: 101;
+  transform: translateY(0);
+  background-color: $c-dark;
+  transition: transform 250ms ease-out;
 }
 
-.screen--prizes.active ~ .background-screen {
-  background-position: 100% 100%;
+.screen.active ~ .background-screen {
+  transform: translateY(-100%);
+  z-index: 101;
 }
 
 .screen--game {

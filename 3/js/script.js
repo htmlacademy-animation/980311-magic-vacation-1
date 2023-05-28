@@ -10424,6 +10424,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_0__);
 
 
+const backgroundScreen = document.createElement("div");
+const pageContent = document.querySelector(".page-content");
+
 class FullPageScroll {
   constructor() {
     this.THROTTLE_TIMEOUT = 1000;
@@ -10445,13 +10448,10 @@ class FullPageScroll {
 
     // for smooth animated appearance of some elements on the page load
     const bodyElement = document.querySelector("body");
-    const pageContent = document.querySelector(".page-content");
-    const backgroundScreen = document.createElement("div");
 
     window.onload = function() {
       bodyElement.classList.add("page-loaded");
-      backgroundScreen.classList.add("background-screen")
-      pageContent.appendChild(backgroundScreen);
+      pageContent.appendChild(backgroundScreen); // for transition between active pages
     }
   }
 
@@ -10486,14 +10486,23 @@ class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
-    this.screenElements.forEach((screen) => {
-      screen.classList.add(`screen--hidden`);
-      screen.classList.remove(`active`);
-    });
-    this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+    // Transition between active pages by using background-screen class.
+    // Make a delay for the .screen to switch from .screen--hidden to .active.
+    // During this delay, make .background-screen do its animation job.
+    // Then, get rid of .background-screen in the moment of switching from .screen-hidden to .active
+    // to display the actual screen
+    backgroundScreen.classList.add("background-screen");
     setTimeout(() => {
-      this.screenElements[this.activeScreen].classList.add(`active`);
-    }, 100);
+      this.screenElements.forEach((screen) => {
+        screen.classList.add(`screen--hidden`);
+        screen.classList.remove(`active`);
+      });
+      this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+      setTimeout(() => {
+        this.screenElements[this.activeScreen].classList.add(`active`);
+        backgroundScreen.classList.remove("background-screen");
+      }, 100);
+    }, 300);
   }
 
   changeActiveMenuItem() {

@@ -176,13 +176,6 @@
     font-size: 1.2rem;
   }
 
-  @keyframes bullet-display {
-    to {
-      opacity: 1;
-      transform: scale(1, 1);
-    }
-  }
-
   &::before {
     content: counter(li);
     counter-increment: li;
@@ -200,7 +193,7 @@
     line-height: 5rem;
     text-align: center;
     transform: scale(0, 0);
-    animation-name: bullet-display;
+    animation-name: zoomInPulsed;
     animation-duration: 300ms;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6); // easeInOutBack
@@ -223,37 +216,17 @@
     }
   }
 
-  @keyframes bullet-text-display  {
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
   p {
     margin: 0;
     opacity: 0;
-    transform: translateX(10px);
-    animation-name: bullet-text-display;
+    transform: translateX(2rem);
+    animation-name: fadeInRight;
     animation-duration: 300ms;
     animation-fill-mode: forwards;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
     }
-  }
-}
-
-@keyframes rules-button-display {
-  to {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
-
-@keyframes rules-button-text-display {
-  to {
-    opacity: 1;
   }
 }
 
@@ -265,14 +238,14 @@
   transform: scaleX(0.3);
   transform-origin: right;
 
-  animation-name: rules-button-display;
+  animation-name: zoomIn;
   animation-duration: 500ms;
   animation-delay: 1s;
   animation-fill-mode: forwards;
 
   span {
     opacity: 0;
-    animation-name: rules-button-text-display;
+    animation-name: fadeIn;
     animation-delay: 1400ms;
     animation-duration: 300ms;
     animation-fill-mode: forwards;

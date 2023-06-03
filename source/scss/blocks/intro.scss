@@ -29,9 +29,10 @@
   text-transform: uppercase;
   font-family: $font-alt;
   font-weight: 400;
-  font-size: 12rem;
+  font-size: 10rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+  transform: translate3d(0, 1rem, 0);
 
   @media (min-width: $stop-scaling) {
     max-width: 990px;
@@ -97,7 +98,7 @@
     opacity: 1;
     transform: translateY(0);
     transition-property: opacity, transform;
-    transition-duration: 500ms;
+    transition-duration: 600ms;
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) ;
   }
 }
@@ -152,6 +153,22 @@
   }
 }
 
+.screen--intro {
+  .intro__label {
+    opacity: 0;
+  }
+}
+
+.screen--intro.active {
+  .intro__label {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 500ms;
+    transition-delay: 700ms;
+    transition-timing-function: cubic-bezier(0.4,-5, 0, 1);
+  }
+}
+
 .intro__label {
   margin: 0 0 1.6rem;
   max-width: 25rem;
@@ -173,6 +190,7 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+  transform: translate3d(0, 1rem, 0);
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 0 -5px;

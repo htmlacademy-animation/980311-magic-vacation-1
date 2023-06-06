@@ -31,6 +31,7 @@
 .text__word {
   display: inline-block;
   margin: 0 5px;
+  padding-top: 25px;
   overflow: hidden;
 }
 
@@ -40,15 +41,21 @@
 }
 
 // style for typography elements that are specific to different pages
-.intro__title.active .text__word > span,
-.intro__date.active .text__word > span {
-  transform: translate3d(0, 0, 0);
+.screen--intro.active {
+  .intro__title.active .text__word > span,
+  .intro__date.active .text__word > span {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.slider__item-title.active .text__word > span {
-  transform: translate3d(0, 0, 0);
+.screen--story.active {
+  .slider__item-title.active .text__word > span {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.prizes__title.active .text__word > span {
-  transform: translate3d(0, 0, 0);
+.screen--prizes.active {
+  .prizes__title.active .text__word > span {
+    transform: translate3d(0, 0, 0);
+  }
 }

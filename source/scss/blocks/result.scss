@@ -54,29 +54,43 @@
     z-index: 1;
     left: 35%;
     width: 20%;
-    animation: shakeY 5s backwards ease-in-out;
+    animation-name: showing, shakeY;
+    animation-duration: 1s, 5s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-direction: alternate;
   }
 
   img.image_leafblue1 {
     bottom: 25%;
     width: 20%;
     right: 29%;
+    animation-name: shakeSmoothLeftOrigin;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
   }
 
   img.image_leafblue2 {
     bottom: 15%;
     left: 27%;
     width: 20%;
+    animation-name: shakeSmoothRightOrigin;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
   }
 
   img.image_leafgreen {
     bottom: 20%;
     right: 24%;
+    animation-name: shakeSmoothLeftOrigin;
+    animation-duration: 3500ms;
+    animation-timing-function: ease-out;
   }
 
   img.image_suitcase {
     bottom: 15%;
-    animation: zoomInPulsedLarge 1s both;
+    animation: zoomInPulsed 1s both;
   }
 }
 

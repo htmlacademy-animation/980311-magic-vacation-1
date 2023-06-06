@@ -193,7 +193,7 @@
     line-height: 5rem;
     text-align: center;
     transform: scale(0, 0);
-    animation-name: zoomInPulsed;
+    animation-name: zoomIn;
     animation-duration: 300ms;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6); // easeInOutBack
@@ -220,7 +220,7 @@
     margin: 0;
     opacity: 0;
     transform: translateX(2rem);
-    animation-name: fadeInRight;
+    animation-name: fadeInX;
     animation-duration: 300ms;
     animation-fill-mode: forwards;
 
@@ -238,7 +238,7 @@
   transform: scaleX(0.3);
   transform-origin: right;
 
-  animation-name: zoomIn;
+  animation-name: zoomInX;
   animation-duration: 500ms;
   animation-delay: 1s;
   animation-fill-mode: forwards;

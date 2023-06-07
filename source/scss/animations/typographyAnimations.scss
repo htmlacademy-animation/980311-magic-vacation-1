@@ -1,0 +1,61 @@
+// 1. intro__title + slider__item-title + slider__item-title
+// custom transition-delay for the 1st word of .intro__title
+@for $i from 1 through 1000 {
+  .intro__title.active .text__word:nth-child(1) > span:nth-child(#{$i}),
+  .slider__item-title.active .text__word > span:nth-child(#{$i}),
+  .prizes__title.active .text__word > span:nth-child(#{$i}) {
+    // delay pattern: 40 - 80 - 0 - 40 - 80 - 0
+    transition-delay: (40ms * ($i % 3)) !important;
+  }
+}
+
+// custom transition-delay for the 2nd word of .intro__title
+@for $i from 1 through 1000 {
+  .intro__title.active .text__word:nth-child(2) > span:nth-child(#{$i}) {
+    // delay pattern: 40 - 80 - 0 - 40 - 80 - 0,
+    // but delay starts after the 1st word's animation is almost finished (its duration is 500ms)
+    transition-delay: 400ms + (40ms * ($i % 3)) !important;
+  }
+}
+
+// 2. intro__date
+@for $i from 1 through 1000 {
+  .intro__date.active .text__word > span:nth-child(#{$i}) {
+    // delay pattern: 40 - 80 - 0 - 40 - 80 - 0,
+    // but delay starts after the 1st word's animation  almost finished (+700ms)
+    transition-delay: 700ms + (40ms * ($i % 3)) !important;
+  }
+}
+
+// styles for words and letters
+.text__word {
+  display: inline-block;
+  margin: 0 5px;
+  padding-top: 25px;
+  overflow: hidden;
+}
+
+.text__word > span {
+  transform: translate3d(0, 1em, 0);
+  display: inline-block;
+}
+
+// style for typography elements that are specific to different pages
+.screen--intro.active {
+  .intro__title.active .text__word > span,
+  .intro__date.active .text__word > span {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.screen--story.active {
+  .slider__item-title.active .text__word > span {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.screen--prizes.active {
+  .prizes__title.active .text__word > span {
+    transform: translate3d(0, 0, 0);
+  }
+}

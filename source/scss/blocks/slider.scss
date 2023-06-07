@@ -115,6 +115,7 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+  transform: translate3d(0, 1rem, 0);
 
   @media (min-width: $stop-scaling) {
     margin-left: -55px;

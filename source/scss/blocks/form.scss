@@ -29,6 +29,24 @@
   }
 }
 
+.screen--result.screen--show {
+  .form__field {
+    opacity: 0;
+    animation-name: slideLeft;
+    animation-fill-mode: forwards;
+    animation-duration: 300ms;
+    animation-delay: 1s;
+  }
+
+  .form__button::before {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+    animation-duration: 300ms;
+    animation-delay: 1s;
+  }
+}
+
 .screen--game {
   .form__field {
     transform: scaleX(0);

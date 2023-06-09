@@ -41,6 +41,11 @@
   li {
     position: relative;
     padding: 0 0.6rem;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-delay: 500ms;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
 
     @media (min-width: $stop-scaling) {
       padding: 0 6px;

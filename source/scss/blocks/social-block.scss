@@ -17,7 +17,7 @@
         transition-duration: 200ms;
         opacity: 1;
         transition-delay: 300ms;
-        transition-timing-function: cubic-bezier(.5,-0.3,.6,.9);
+        transition-timing-function: cubic-bezier(.5, -0.3, .6, .9);
       }
 
       .social-block__link--insta {
@@ -25,7 +25,7 @@
         transition-duration: 200ms;
         opacity: 1;
         transition-delay: 500ms;
-        transition-timing-function: cubic-bezier(.5,-0.3,.6,.9);
+        transition-timing-function: cubic-bezier(.5, -0.3, .6, .9);
       }
 
       .social-block__link--vk {
@@ -33,7 +33,7 @@
         transition-duration: 200ms;
         opacity: 1;
         transition-delay: 700ms;
-        transition-timing-function: cubic-bezier(.5,-0.3,.6,.9);
+        transition-timing-function: cubic-bezier(.5, -0.3, .6, .9);
       }
     }
   }
@@ -55,6 +55,41 @@
   color: $c-dark;
   border-radius: 50%;
 
+  .slide2 & {
+    color: blue;
+
+    &:hover {
+      color: lightskyblue;
+    }
+
+    &:focus {
+      color: lightskyblue;
+      border: 1px solid lightskyblue;
+    }
+
+    &:active {
+      background-color: lightskyblue;
+      color: white;
+    }
+  }
+
+  .slide3 & {
+    color: lightskyblue;
+
+    &:hover {
+      color: blue;
+    }
+
+    &:focus {
+      color: blue;
+      border: 1px solid blue;
+    }
+
+    &:active {
+      background-color: blue;
+      color: white;
+    }
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -74,7 +109,7 @@
     width: 0;
     height: 0;
     transition-property: width, height;
-    transition-timing-function: cubic-bezier(1,1.5,1,1) ;
+    transition-timing-function: cubic-bezier(1, 1.5, 1, 1);
     transition-duration: 500ms;
   }
 
@@ -83,6 +118,17 @@
     display: block;
     width: 2.3rem;
     height: 2.2rem;
+
+
+    //.slide3 & {
+    //  color: blue;
+    //
+    //  &:hover,
+    //  &:focus,
+    //  &:active {
+    //    color: blue;
+    //  }
+    //}
   }
 
   &:hover,

@@ -83,7 +83,7 @@
     transform: translateY(0);
     transition-property: opacity, transform;
     transition-duration: 300ms;
-    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) ;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
   .slider__item-text {
@@ -92,7 +92,7 @@
     transition-property: opacity, transform;
     transition-duration: 300ms;
     transition-delay: 350ms;
-    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) ;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }
 
@@ -103,7 +103,7 @@
     transition-property: opacity, transform;
     transition-duration: 300ms;
     transition-delay: 700ms;
-    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) ;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }
 
@@ -190,6 +190,26 @@
 
   @media (max-width: $mobile) and (orientation: landscape) {
     display: none;
+  }
+}
+
+.slider__control--prev {
+  animation-name: rollInFromLeft;
+  animation-duration: 600ms;
+
+  svg {
+    animation-name: rotateFromLeft;
+    animation-duration: 600ms;
+  }
+}
+
+.slider__control--next {
+  animation-name: rollInFromRight;
+  animation-duration: 600ms;
+
+  svg {
+    animation-name: rotateFromRight;
+    animation-duration: 600ms;
   }
 }
 

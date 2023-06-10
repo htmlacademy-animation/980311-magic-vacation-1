@@ -40,7 +40,8 @@
 
 .page-loaded {
   .screen__footer {
-    transform: translateY(0);
+    animation-name: slideUp;
+    animation-duration: 500ms;
   }
 }
 
@@ -52,10 +53,6 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
-  transform: translateY(100px);
-  transition: transform 400ms cubic-bezier(0.4,-5, 0, 1);
-
-
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
@@ -126,6 +123,7 @@
     .screen__footer--full & {
       opacity: 0;
       pointer-events: none;
+
     }
   }
 
@@ -215,6 +213,11 @@
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.2;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-delay: 500ms;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
 
   @media (min-width: $stop-scaling) {
     padding: 8px 0;

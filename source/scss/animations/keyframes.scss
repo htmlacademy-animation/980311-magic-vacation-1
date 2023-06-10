@@ -88,86 +88,122 @@
 }
 
 
-@keyframes shakeSmoothRightOrigin {
+@keyframes shakeSmooth1 {
   from {
-    transform: rotate3d(0, 0, 0, 0);
-    transform-origin: right;
+    transform: rotate(0);
   }
 
   10% {
-    transform: rotate3d(1, 1, 1, -15deg);
-    transform-origin: right;
+    transform: rotate(-15deg);
   }
 
   15% {
-    transform: rotate3d(1, 1, 1, 12deg);
-    transform-origin: right;
+    transform: rotate(12deg);
   }
 
   30% {
-    transform: rotate3d(1, 1, 1, -10deg);
-    transform-origin: right;
+    transform: rotate(-10deg);
   }
 
   45% {
-    transform: rotate3d(1, 1, 1, 7deg);
-    transform-origin: right;
+    transform: rotate(7deg);
   }
 
   60% {
-    transform: rotate3d(1, 1, 1, -5deg);
-    transform-origin: right;
+    transform: rotate(-5deg);
   }
 
   80% {
-    transform: rotate3d(1, 1, 1, 3deg);
-    transform-origin: right;
+    transform: rotate(3deg);
   }
 
   to {
-    transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
-    transform-origin: right;
+    transform: translate3d(0, 0, 0) rotate(0);
   }
 }
 
-@keyframes shakeSmoothLeftOrigin {
+@keyframes shakeSmooth2 {
   from {
-    transform: rotate3d(0, 0, 0, 0);
-    transform-origin: left;
+    transform: rotate(0);
   }
 
   10% {
-    transform: rotate3d(1, 1, 1, 15deg);
-    transform-origin: left;
+    transform: rotate(15deg);
   }
 
   15% {
-    transform: rotate3d(1, 1, 1, -12deg);
-    transform-origin: left;
+    transform: rotate(-12deg);
   }
 
   30% {
-    transform: rotate3d(1, 1, 1, 10deg);
-    transform-origin: left;
+    transform: rotate(10deg);
   }
 
   45% {
-    transform: rotate3d(1, 1, 1, -7deg);
-    transform-origin: left;
+    transform: rotate(-7deg);
   }
 
   60% {
-    transform: rotate3d(1, 1, 1, 5deg);
-    transform-origin: left;
+    transform: rotate(5deg);
   }
 
   80% {
-    transform: rotate3d(1, 1, 1, -3deg);
-    transform-origin: left;
+    transform: rotate(-3deg);
   }
 
   to {
-    transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+}
+
+@keyframes rollInFromLeft {
+  from {
+    transform: translateX(-100px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rollInFromRight {
+  from {
+    transform: translateX(100px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotateFromLeft {
+  from {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes rotateFromRight {
+  from {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes rotateAndTranslateFromRight {
+  from {
+    transform: rotate(90deg) translate(-80%, 10%);
     transform-origin: left;
+  }
+  to {
+    transform: rotate(0) translate(-50% -50%);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px)
+  }
+
+  to {
+    transform: translateY(0);
   }
 }
